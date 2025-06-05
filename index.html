@@ -2,233 +2,82 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>欢迎您来到我们的网站</title>
+    <title>欢迎页面</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Helvetica Neue', Arial, sans-serif;
-        }
-        
         body {
-            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-            color: white;
-            overflow: hidden;
-        }
-        
-        .welcome-card {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 40px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
             max-width: 800px;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            transform: translateY(0);
-            animation: float 3s infinite ease-in-out;
+            margin: 0 auto;
+            padding: 20px;
+            color: #333;
+            background-color: #f8f8f8;
         }
         
         h1 {
-            font-size: 3.5rem;
-            margin-bottom: 20px;
-            background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #a1c4fd);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            background-size: 300% 300%;
-            animation: gradient 4s ease infinite;
+            font-size: 2rem;
+            margin-bottom: 0.5em;
         }
         
         p {
-            font-size: 1.25rem;
-            line-height: 1.7;
-            margin: 20px 0;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            font-size: 1.1rem;
+            margin-bottom: 1em;
         }
         
-        .highlight {
-            background: rgba(255, 255, 255, 0.3);
-            padding: 2px 10px;
-            border-radius: 5px;
-            font-weight: 600;
+        ul {
+            margin-top: 1em;
+            margin-bottom: 2em;
         }
         
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(90deg, #ff9a9e 0%, #fbc2eb 100%);
-            color: white;
-            padding: 15px 40px;
+        li {
+            margin-bottom: 0.5em;
+        }
+        
+        .container {
             margin-top: 30px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: 600;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-            background: linear-gradient(90deg, #fbc2eb 0%, #ff9a9e 100%);
-        }
-        
-        .features {
-            display: flex;
-            justify-content: space-around;
-            margin: 40px 0;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        
-        .feature {
-            flex: 1;
-            min-width: 200px;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            transition: transform 0.3s ease;
         }
         
-        .feature:hover {
-            transform: translateY(-10px);
-            background: rgba(255, 255, 255, 0.2);
+        hr {
+            margin: 30px 0;
+            border: 0;
+            border-top: 1px solid #ddd;
         }
         
-        .feature i {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-        }
-        
-        .feature h3 {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .logo {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 20px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #a1c4fd 0%, #c2e9fb 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .circles {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-        }
-        
-        .circle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .circle:nth-child(1) {
-            width: 300px;
-            height: 300px;
-            top: -150px;
-            left: -100px;
-        }
-        
-        .circle:nth-child(2) {
-            width: 200px;
-            height: 200px;
-            bottom: -50px;
-            right: -80px;
-        }
-        
-        .circle:nth-child(3) {
-            width: 150px;
-            height: 150px;
-            bottom: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-        
-        @keyframes gradient {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-        
-        @media (max-width: 768px) {
-            .welcome-card {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 2.5rem;
-            }
-            
-            .cta-button {
-                padding: 12px 30px;
-            }
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
         }
     </style>
 </head>
 <body>
-    <!-- 装饰背景元素 -->
-    <div class="circles">
-        <div class="circle"></div>
-        <div class="circle"></div>
-        <div class="circle"></div>
-    </div>
-    
-    <div class="welcome-card">
-        <!-- Logo -->
-        <div class="logo">🌟</div>
+    <div class="container">
+        <h1>欢迎访问我们的网站</h1>
         
-        <!-- 主标题 -->
-        <h1>欢迎访问我们的网站!</h1>
+        <p>感谢您选择访问我们的平台。我们是一家致力于提供高质量服务的网站。</p>
         
-        <!-- 欢迎内容 -->
-        <p>感谢您选择访问我们的平台。我们致力于提供<span class="highlight">高品质的服务体验</span>，让您每一次访问都感受到<span class="highlight">便捷、高效和安全</span>。</p>
-        <p>无论是寻找产品、服务还是专业指导，我们都为您精心准备了一切所需。</p>
+        <p>我们的目标是为每一位访问者提供有价值的内容和帮助。</p>
         
-        <!-- 特点展示 -->
-        <div class="features">
-            <div class="feature">
-                <h3>便捷易用</h3>
-                <p>直观的界面设计，让操作变得简单</p>
-            </div>
-            <div class="feature">
-                <h3>功能强大</h3>
-                <p>满足您各种需求的专业解决方案</p>
-            </div>
-            <div class="feature">
-                <h3>安心可靠</h3>
-                <p>保护您的数据隐私和使用安全</p>
-            </div>
+        <p>您可以通过以下方式使用我们的网站：</p>
+        
+        <ul>
+            <li>浏览我们提供的信息和资源</li>
+            <li>使用我们的在线工具和服务</li>
+            <li>联系我们提出任何问题或建议</li>
+            <li>注册账户获取更多个性化服务</li>
+        </ul>
+        
+        <hr>
+        
+        <p>我们的网站将持续更新和完善，为您提供更好的体验。</p>
+        
+        <p>如果您是首次访问，我们建议您访问我们的<a href="#">常见问题页面</a>。</p>
+        
+        <div class="footer">
+            <p>&copy; 2023 网站名称. 保留所有权利。</p>
         </div>
-        
-        <!-- 行动按钮 -->
-        <a href="#" class="cta-button">开始探索之旅</a>
     </div>
 </body>
 </html>
